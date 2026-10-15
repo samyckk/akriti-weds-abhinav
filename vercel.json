@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm ci --prefix wedding-invitation",
+  "build": {
+    "env": {
+      "NITRO_PRESET": "vercel"
+    }
+  },
   "buildCommand": "npm run build --prefix wedding-invitation && rm -rf .vercel/output && mkdir -p .vercel && cp -a wedding-invitation/.vercel/output .vercel/output"
 }
