@@ -408,7 +408,10 @@ img { max-width: 100%; display: block }
 .ev .meta h3 { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 5.4vw, 1.75rem); line-height: 1.15; margin: 0; letter-spacing: .02em; text-shadow: 0 2px 14px rgba(0,0,0,.35); max-width: 100% }
 .ev .meta .time { flex: none; font-family: var(--sans); font-weight: 600; font-size: .74rem; letter-spacing: .14em; padding: .45rem .8rem; border-radius: 999px; background: rgba(255,255,255,.22); border: 1px solid rgba(255,255,255,.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-variant-numeric: tabular-nums }
 .ev .body { padding: 1.1rem 1.3rem 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap }
+.ev .words { flex: 1 1 200px; display: grid; gap: .4rem }
 .ev p { margin: 0; font-style: italic; font-size: 1.15rem; color: var(--ink); flex: 1 1 200px }
+.ev p.venue { flex: none; display: inline-flex; align-items: center; gap: .4rem; font-family: var(--sans); font-style: normal; font-weight: 600; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep) }
+.ev p.venue svg { flex: none; width: 14px; height: 14px }
 .ev .photo-label { padding-bottom: 80px }
 .cal { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--sans); font-weight: 600; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: var(--sage-deep); padding: .6rem 1rem; border-radius: 999px; border: 1px solid var(--sage); transition: background .3s, color .3s, transform .4s var(--ease); white-space: nowrap; background: var(--white); min-height: 44px; height: auto }
 .cal:hover, .cal:focus-visible { background: var(--sage-deep); color: var(--white); transform: translateY(-1px) }
@@ -496,6 +499,7 @@ img { max-width: 100%; display: block }
   .ev .meta h3 { font-size: 25px }
   .ev .body { padding: 1rem 1rem 1.1rem }
   .ev .body p { font-size: 18px }
+  .ev .body p.venue { font-size: .7rem }
   .cal { min-height: 44px }
   .venue-card { border-radius: 22px }
   .venue-card .text { padding: 1.5rem 1rem 1.6rem }
