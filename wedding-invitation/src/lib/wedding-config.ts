@@ -2,7 +2,7 @@ export const wedding = {
   groom: 'Abhinav',
   bride: 'Akriti',
   weddingDate: '2026-11-25T08:00:00+05:30',
-  dates: '25 & 26 November 2026',
+  dates: '25 November 2026',
   city: 'Saharanpur, Uttar\u00A0Pradesh', // non-breaking space keeps "Uttar Pradesh" on one line
   venue: 'Jaykim Banquets (Unit of JKK Orchid)',
   address: 'Saharanpur, Uttar\u00A0Pradesh',
@@ -25,6 +25,7 @@ export type WeddingEvent = {
   time: string;
   start: string;
   end: string;
+  /** Event copy; a "\n" starts a new line on the card. */
   description: string;
   /** Where this event happens; falls back to the wedding venue when left out. */
   venue?: string;
@@ -36,10 +37,10 @@ export type WeddingEvent = {
 };
 
 export const events: WeddingEvent[] = [
-  { title: 'Mandha Pujan - Lunch', time: '1:00 PM', start: '2026-11-24T13:00:00+05:30', end: '2026-11-24T14:00:00+05:30', description: 'Mandha pujan at 10am and lunch at Navyug park 1pm', photo: '/abhinav_mandha.jpeg' },
+  { title: 'Mandha Pujan - Lunch', time: '1:00 PM', start: '2026-11-24T13:00:00+05:30', end: '2026-11-24T14:00:00+05:30', description: 'Mandha pujan at 10 am (at residence)\nLunch at Navyug Park 1 pm', photo: '/abhinav_mandha.jpeg' },
   { title: 'The Haldi-Sangeet Mela', time: '11:00 AM – 3:00 PM', start: '2026-11-25T11:00:00+05:30', end: '2026-11-25T15:00:00+05:30', description: 'Rang, masti, haldi ki pehli khushboo aur phir geet aur naach…', venue: 'Hotel President', mapsUrl: 'https://share.google/CKsOUaHwCCN1r84Ic', photo: '/Haldi_sangeet.jpeg' },
   { title: 'Baraat', time: '7:00 PM', start: '2026-11-25T19:00:00+05:30', end: '2026-11-25T21:00:00+05:30', description: 'Dhol bajenge, baraat niklegi aur khushiyan chhaayengi…', photo: '/events/baraat.png', focus: '50% 0%' },
-  { title: 'Wedding / Phere', time: '8:00 AM', start: '2026-11-26T08:00:00+05:30', end: '2026-11-26T10:00:00+05:30', description: 'Saat phere, saat vaade aur zindagi bhar ka saath…', photo: '/abhinav_didi_phere_new.jpeg', focus: '50% 20%' },
+  { title: 'Wedding', time: '8:00 AM', start: '2026-11-26T08:00:00+05:30', end: '2026-11-26T10:00:00+05:30', description: 'Saat phere, saat vaade aur zindagi bhar ka saath…', photo: '/abhinav_didi_phere_new.jpeg', focus: '50% 20%' },
   { title: 'Vidai', time: '11:00 AM', start: '2026-11-26T11:00:00+05:30', end: '2026-11-26T12:00:00+05:30', description: 'Aankhon mein aansu, dil mein duaayein aur ek nayi shuruaat…', photo: '/vidhai_new.jpeg' },
 ];
 

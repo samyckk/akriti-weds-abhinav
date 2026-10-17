@@ -374,36 +374,54 @@ export function SaveTheDate() {
   );
 }
 
+/** Cormorant draws its hyphen as a rising wedge, so spaced dashes are set in the sans font to stay flat and level. */
+function EventTitle({ title }: { title: string }) {
+  return (
+    <>
+      {title.split(" - ").map((part, index) => (
+        <span key={`${part}-${index}`}>
+          {index > 0 && <span className="dash"> - </span>}
+          {part}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export function EventCard({ event }: { event: (typeof events)[number] }) {
   return (
     <article className="ev rv">
       <div className="event-cover">
         <Photo src={event.photo} label={`${event.title} photo`} focus={event.focus} />
         <div className="meta">
-          <h3>{event.title}</h3>
+          <h3>
+            <EventTitle title={event.title} />
+          </h3>
           <span className="time">{event.time}</span>
         </div>
       </div>
       <div className="body">
         <div className="words">
-          {event.venue &&
-            (event.mapsUrl ? (
-              <a className="venue" href={event.mapsUrl} target="_blank" rel="noopener noreferrer">
-                <MapPin width={14} height={14} />
-                {event.venue}
-              </a>
-            ) : (
-              <p className="venue">
-                <MapPin width={14} height={14} />
-                {event.venue}
-              </p>
-            ))}
+          {event.venue && !event.mapsUrl && (
+            <p className="venue">
+              <MapPin width={14} height={14} />
+              {event.venue}
+            </p>
+          )}
           <p>{event.description}</p>
         </div>
-        <a className="cal" href={calendarUrl(event)} target="_blank" rel="noopener noreferrer">
-          <CalendarDays width={13} height={13} />
-          Add to calendar
-        </a>
+        <div className="acts">
+          {event.mapsUrl && (
+            <a className="cal place" href={event.mapsUrl} target="_blank" rel="noopener noreferrer">
+              <MapPin width={13} height={13} />
+              View Location
+            </a>
+          )}
+          <a className="cal" href={calendarUrl(event)} target="_blank" rel="noopener noreferrer">
+            <CalendarDays width={13} height={13} />
+            Add to calendar
+          </a>
+        </div>
       </div>
     </article>
   );
