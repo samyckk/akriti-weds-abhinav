@@ -222,10 +222,20 @@ function Photo({
   );
 }
 
-function Backdrop({ src, label, wide = "" }: { src: string; label: string; wide?: string }) {
+function Backdrop({
+  src,
+  label,
+  wide = "",
+  focus = "",
+}: {
+  src: string;
+  label: string;
+  wide?: string;
+  focus?: string | undefined;
+}) {
   return (
     <div className="backdrop" style={{ "--src": `url("${src}")` } as CSSProperties}>
-      <Photo src={src} label={label} wide={wide} />
+      <Photo src={src} label={label} wide={wide} focus={focus} />
       <div className="veil" />
     </div>
   );
@@ -263,7 +273,12 @@ function DownCue({ show, reduce }: { show: boolean; reduce: boolean }) {
 export function Hero() {
   return (
     <section className="scene photo-scene" id="story">
-      <Backdrop src={wedding.photos.hero} wide={wedding.photosWide.hero} label="Couple portrait" />
+      <Backdrop
+        src={wedding.photos.hero}
+        wide={wedding.photosWide.hero}
+        label="Couple portrait"
+        focus={wedding.photoFocus.hero}
+      />
       <Petals mode="soft" />
       <div className="inner">
         <p className="line invite rv">
