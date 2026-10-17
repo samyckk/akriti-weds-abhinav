@@ -254,10 +254,6 @@ img { max-width: 100%; display: block }
 .scene.photo-scene .inner { padding-top: 34vh }
 #finale { align-items: end; padding-bottom: 2rem }
 #finale .inner { padding-top: 0; padding-bottom: 0; gap: 1.1rem }
-/* A phone only ever shows a ~62% slice of this portrait frame, so the crop has to favour the
-   left-hand side: a smaller X keeps the tall brass lamp stand in view instead of clipping it.
-   The contained desktop rule below needs the opposite sign, hence two values rather than one. */
-#finale .backdrop img { object-position: 40% 30% }
 #story .inner { padding-top: min(50vh, calc(100vh - 500px)); padding-top: min(50vh, calc(100svh - 500px)) }
 /* the opening invitation runs long, so it is set larger than the running lines but still wraps to two balanced lines */
 #story .invite { font-size: clamp(1.35rem, 5vw, 1.95rem); max-width: 24ch; color: var(--ink) }
@@ -370,9 +366,7 @@ img { max-width: 100%; display: block }
    ===================================================================== */
 @media (min-width: 601px) {
   #date .backdrop::before, #finale .backdrop::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--src) center / cover no-repeat; filter: blur(26px) brightness(.96); transform: scale(1.04) }
-  #date .backdrop img { object-fit: contain; object-position: 50% 0 }
-  /* a contained frame has empty margins, so sliding the picture left means a *smaller* X here */
-  #finale .backdrop img { object-fit: contain; object-position: 46% 0 }
+  #date .backdrop img, #finale .backdrop img { object-fit: contain; object-position: 50% 0 }
   /* the finale's parallax overscan would push the top of a contained frame off screen */
   #finale .backdrop { inset: 0; transform: none; will-change: auto }
 }
