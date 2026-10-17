@@ -7,7 +7,7 @@ export const wedding = {
   venue: 'Jaykim Banquets (Unit of JKK Orchid)',
   address: 'Saharanpur, Uttar\u00A0Pradesh',
   mapsUrl: 'https://maps.app.goo.gl/5Prty6rrUXZ9UH8u9',
-  photos: { hero: '/front_abhinav_didi.jpeg', groom: '/couple/groom_childhood.png', bride: '/couple/bride_childhood.jpg', saveDate: '/baat_pakki_new.jpg', venue: '/banquet_hall.jpeg', finale: '/abhinav_didi_south_indian.jpeg', share: '/baat_pakki_share.jpg' },
+  photos: { hero: '/front_abhinav_didi.jpeg', groom: '/couple/groom_childhood.png', bride: '/couple/bride_childhood.jpg', saveDate: '/baat_pakki_one.jpg', venue: '/banquet_hall.jpeg', finale: '/abhinav_didi_south_indian.jpeg', share: '/baat_pakki_share.jpg' },
   /** Optional crop focus (CSS object-position) for a photo that its frame would otherwise cut badly. */
   photoFocus: { bride: '50% 8%', hero: '44% 30%' } as Partial<Record<'hero' | 'groom' | 'bride' | 'saveDate' | 'venue' | 'finale', string>>,
   /** Optional wide (16:9) versions of the backdrops, used from 601px up; empty falls back to the tall photo. */

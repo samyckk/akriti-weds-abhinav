@@ -254,10 +254,10 @@ img { max-width: 100%; display: block }
 .scene.photo-scene .inner { padding-top: 34vh }
 #finale { align-items: end; padding-bottom: 2rem }
 #finale .inner { padding-top: 0; padding-bottom: 0; gap: 1.1rem }
-/* Nudge the finale photo a touch to the left. Under `cover` a larger X shows more of the
-   right of the frame, so the picture slides left; the contained desktop rule below needs the
-   opposite sign, hence two values rather than one --focus. */
-#finale .backdrop img { object-position: 56% 30% }
+/* A phone only ever shows a ~62% slice of this portrait frame, so the crop has to favour the
+   left-hand side: a smaller X keeps the tall brass lamp stand in view instead of clipping it.
+   The contained desktop rule below needs the opposite sign, hence two values rather than one. */
+#finale .backdrop img { object-position: 40% 30% }
 #story .inner { padding-top: min(50vh, calc(100vh - 500px)); padding-top: min(50vh, calc(100svh - 500px)) }
 /* the opening invitation runs long, so it is set larger than the running lines but still wraps to two balanced lines */
 #story .invite { font-size: clamp(1.35rem, 5vw, 1.95rem); max-width: 24ch; color: var(--ink) }
