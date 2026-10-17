@@ -7,7 +7,7 @@ export const wedding = {
   venue: 'Jaykim Banquets (Unit of JKK Orchid)',
   address: 'Saharanpur, Uttar\u00A0Pradesh',
   mapsUrl: 'https://maps.app.goo.gl/5Prty6rrUXZ9UH8u9',
-  photos: { hero: '/front_abhinav_didi.jpeg', groom: '/couple/groom_childhood.png', bride: '/couple/bride_childhood.jpg', saveDate: '/baat_pakki.jpeg', venue: '/banquet_hall.jpeg', finale: '/abhinav_didi_south_indian.jpeg' },
+  photos: { hero: '/front_abhinav_didi.jpeg', groom: '/couple/groom_childhood.png', bride: '/couple/bride_childhood.jpg', saveDate: '/baat_pakki.jpeg', venue: '/banquet_hall.jpeg', finale: '/abhinav_didi_south_indian.jpeg', share: '/baat_pakki_share.jpg' },
   /** Optional crop focus (CSS object-position) for a photo that its frame would otherwise cut badly. */
   photoFocus: { bride: '50% 8%' } as Partial<Record<'hero' | 'groom' | 'bride' | 'saveDate' | 'venue' | 'finale', string>>,
   /** Optional wide (16:9) versions of the backdrops, used from 601px up; empty falls back to the tall photo. */
@@ -46,6 +46,20 @@ export const events: WeddingEvent[] = [
 
 /** "Abhinav weds Akriti" — the groom always leads, everywhere the two are named together. */
 export const couple = `${wedding.groom} weds ${wedding.bride}`;
+
+/**
+ * Link unfurlers ignore relative image URLs, so the share card needs the deployed origin.
+ * Vercel injects its domains into the server runtime, so no domain is hardcoded here.
+ */
+const vercelEnv = (globalThis as { process?: { env?: { VERCEL_PROJECT_PRODUCTION_URL?: string; VERCEL_URL?: string } } })
+  .process?.env;
+const vercelHost = vercelEnv?.VERCEL_PROJECT_PRODUCTION_URL ?? vercelEnv?.VERCEL_URL ?? '';
+
+/** The site's own origin, e.g. "https://akriti-weds-abhinav.vercel.app"; empty on localhost. */
+export const siteUrl = vercelHost ? `https://${vercelHost}` : '';
+
+/** Turns a public asset path into an absolute URL that link unfurlers will accept. */
+export const absoluteUrl = (path: string) => `${siteUrl}${path}`;
 
 /** Every date on the invitation is written in India time, whatever the guest's device is set to. */
 const format = (date: string, options: Intl.DateTimeFormatOptions) =>

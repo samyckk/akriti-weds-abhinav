@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Invitation, MusicToggle, OpeningLoader } from "@/components/wedding-invitation";
 import { useMusic } from "@/hooks/use-music";
-import { couple, wedding } from "@/lib/wedding-config";
+import { absoluteUrl, couple, wedding } from "@/lib/wedding-config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +21,13 @@ export const Route = createFileRoute("/")({
         content: `Two little souls. One beautiful story. Celebrate our new beginning on ${wedding.dates}.`,
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: absoluteUrl(wedding.photos.share) },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: `${couple} — ${wedding.dates}` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: absoluteUrl(wedding.photos.share) },
+      { name: "twitter:image:alt", content: `${couple} — ${wedding.dates}` },
     ],
   }),
   component: Index,
