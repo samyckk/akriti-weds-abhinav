@@ -2,34 +2,37 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Invitation, MusicToggle, OpeningLoader } from "@/components/wedding-invitation";
 import { useMusic } from "@/hooks/use-music";
-import { absoluteUrl, couple, wedding } from "@/lib/wedding-config";
+import { absoluteUrl, couple, shareVersion, wedding } from "@/lib/wedding-config";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: `${couple} — A Wedding Invitation` },
-      {
-        name: "description",
-        content: `With love and the blessings of our families, join us for two days of wedding celebrations on ${wedding.dates} in ${wedding.city}.`,
-      },
-      {
-        property: "og:title",
-        content: `${couple} — A Wedding Invitation`,
-      },
-      {
-        property: "og:description",
-        content: `Two little souls. One beautiful story. Celebrate our new beginning on ${wedding.dates}.`,
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: absoluteUrl(wedding.photos.share) },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: `${couple} — ${wedding.dates}` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: absoluteUrl(wedding.photos.share) },
-      { name: "twitter:image:alt", content: `${couple} — ${wedding.dates}` },
-    ],
-  }),
+  head: () => {
+    const shareImage = absoluteUrl(`${wedding.photos.share}?v=${shareVersion}`);
+    return {
+      meta: [
+        { title: `${couple} — A Wedding Invitation` },
+        {
+          name: "description",
+          content: `With love and the blessings of our families, join us for two days of wedding celebrations on ${wedding.dates} in ${wedding.city}.`,
+        },
+        {
+          property: "og:title",
+          content: `${couple} — A Wedding Invitation`,
+        },
+        {
+          property: "og:description",
+          content: `Two little souls. One beautiful story. Celebrate our new beginning on ${wedding.dates}.`,
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: shareImage },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: `${couple} — ${wedding.dates}` },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: shareImage },
+        { name: "twitter:image:alt", content: `${couple} — ${wedding.dates}` },
+      ],
+    };
+  },
   component: Index,
 });
 
