@@ -65,7 +65,7 @@ export const absoluteUrl = (path: string) => `${siteUrl}${path}`;
  * Bump this whenever photos.share is replaced. WhatsApp, Facebook and X cache og:image for
  * weeks, so a versioned query string is what actually forces the new preview to be fetched.
  */
-export const shareVersion = 3;
+export const shareVersion = 4;
 
 /** Every date on the invitation is written in India time, whatever the guest's device is set to. */
 const format = (date: string, options: Intl.DateTimeFormatOptions) =>
