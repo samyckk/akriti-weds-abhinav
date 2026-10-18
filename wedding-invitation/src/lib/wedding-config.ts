@@ -11,7 +11,7 @@ export const wedding = {
   /** Optional crop focus (CSS object-position) for a photo that its frame would otherwise cut badly. */
   photoFocus: { bride: '50% 8%', hero: '44% 30%' } as Partial<Record<'hero' | 'groom' | 'bride' | 'saveDate' | 'venue' | 'finale', string>>,
   /** Optional wide (16:9) versions of the backdrops, used from 601px up; empty falls back to the tall photo. */
-  photosWide: { hero: '', saveDate: '' },
+  photosWide: { hero: '', saveDate: '/baat_pakki_couple_wide.jpg' },
   /** The melody begins as the gate swings open; the sound button mutes it. */
   music: { startOnOpen: true, src: '/wedding-tune.mpeg' },
   contacts: [

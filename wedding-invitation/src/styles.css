@@ -351,22 +351,28 @@ img { max-width: 100%; display: block }
 .countdown span { font-family: var(--sans); font-weight: 600; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-deep) }
 #date .line { color: var(--rose-deep); margin-top: 1rem }
 #date .backdrop .veil { background: linear-gradient(180deg, rgba(251,247,241,0) 0%, rgba(251,247,241,.28) 42%, rgba(251,247,241,.9) 50%, rgba(251,247,241,.92) 93%, var(--ivory) 100%) }
-/* the baat pakki frame seats the couple in its lower two thirds, so the picture is zoomed and lifted a little to bring their faces up toward the clear band above the veil, while the yellow BAAT PAKKI balloons stay in view */
-#date .backdrop img { object-position: 50% 0%; transform: scale(1.1) translateY(-10%); transform-origin: 50% 0 }
+/* the baat pakki frame carries the whole couple from the head down, so nothing here may
+   crop it: `contain` fits the portrait phone frame top-aligned and leaves the ivory body
+   background under the veil, and no zoom/lift transform is applied that could clip a head */
+#date .backdrop img { object-fit: contain; object-position: 50% 0% }
 #date .backdrop { inset: 0; transform: none; will-change: auto }
 #date { height: 100vh; height: 100svh; min-height: 0; align-items: end; padding-bottom: calc(6rem + env(safe-area-inset-bottom,0px)) }
 #date .inner { padding-top: 0; padding-bottom: 0 }
 #date .big .gild { background-image: linear-gradient(100deg, #6E5328 0%, #8C6D3B 22%, #C9A96E 50%, #8C6D3B 78%, #6E5328 100%) }
 
 /* =====================================================================
-   WIDE SCREENS — these photos are taller than a landscape viewport, so `cover`
-   would slice them into a band and cut heads off the top. Here they are shown
-   whole: `contain` keeps every face in the clear part of the veil, and a blurred
-   copy of the same frame fills the margins so the backdrop still runs edge to edge.
+   WIDE SCREENS — the finale photo is taller than a landscape viewport, so `cover`
+   would slice it into a band and cut heads off the top. It is shown whole instead:
+   `contain` keeps every face in the clear part of the veil, and a blurred copy of
+   the same frame fills the margins so the backdrop still runs edge to edge.
+   The save-the-date frame is already 16:9, so `cover` fills a landscape viewport
+   with no margins at all, and top-anchoring means it only ever trims the floor,
+   which the veil hides behind the date.
    ===================================================================== */
 @media (min-width: 601px) {
   #date .backdrop::before, #finale .backdrop::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--src) center / cover no-repeat; filter: blur(26px) brightness(.96); transform: scale(1.04) }
-  #date .backdrop img, #finale .backdrop img { object-fit: contain; object-position: 50% 0 }
+  #date .backdrop img { object-fit: cover; object-position: 50% 0 }
+  #finale .backdrop img { object-fit: contain; object-position: 50% 0 }
   /* the finale's parallax overscan would push the top of a contained frame off screen */
   #finale .backdrop { inset: 0; transform: none; will-change: auto }
 }
