@@ -40,7 +40,7 @@ export const events: WeddingEvent[] = [
   { title: 'Mandha Pujan - Lunch', time: '1:00 PM', start: '2026-11-24T13:00:00+05:30', end: '2026-11-24T14:00:00+05:30', description: 'Mandha pujan at 10 am (at residence)\nLunch at Navyug Park 1 pm', photo: '/abhinav_mandha.jpeg' },
   { title: 'The Haldi-Sangeet Mela', time: '11:00 AM – 3:00 PM', start: '2026-11-25T11:00:00+05:30', end: '2026-11-25T15:00:00+05:30', description: 'Rang, masti, haldi ki pehli khushboo aur phir geet aur naach…', venue: 'Hotel President', mapsUrl: 'https://maps.app.goo.gl/rzYhET64B6vwXTyAA', photo: '/Haldi_sangeet.jpeg' },
   { title: 'Baraat', time: '7:00 PM', start: '2026-11-25T19:00:00+05:30', end: '2026-11-25T21:00:00+05:30', description: 'Dhol bajenge, baraat niklegi aur khushiyan chhaayengi…', photo: '/events/baraat.png', focus: '50% 0%' },
-  { title: 'Phere', time: '7:00 AM', start: '2026-11-26T07:00:00+05:30', end: '2026-11-26T09:00:00+05:30', description: 'Saat phere, saat vaade aur zindagi bhar ka saath…', photo: '/phere_new.jpeg', focus: '50% 20%' },
+  { title: 'Phere', time: '7:00 AM', start: '2026-11-26T07:00:00+05:30', end: '2026-11-26T09:00:00+05:30', description: 'Saat phere, saat vaade aur zindagi bhar ka saath…', photo: '/phere_event.jpeg', focus: '50% 20%' },
   { title: 'Vidai', time: '11:00 AM', start: '2026-11-26T11:00:00+05:30', end: '2026-11-26T12:00:00+05:30', description: 'Aankhon mein aansu, dil mein duaayein aur ek nayi shuruaat…', photo: '/vidhai_new.jpeg' },
 ];
 
