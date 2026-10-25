@@ -6,7 +6,7 @@ export const wedding = {
   city: 'Saharanpur, Uttar\u00A0Pradesh', // non-breaking space keeps "Uttar Pradesh" on one line
   venue: 'Jaykim Banquets (Unit of JKK Orchid)',
   address: 'Saharanpur, Uttar\u00A0Pradesh',
-  mapsUrl: 'https://maps.app.goo.gl/5Prty6rrUXZ9UH8u9',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=JAYKIM+BANQUETS+(Unit+of+JKK+ORCHID)&query_place_id=ChIJJV1mJSWO',
   photos: { hero: '/couple/first.jpg', groom: '/couple/groom_childhood.png', bride: '/dinki_childhood_doodle.jpeg', saveDate: '/baat_pakki_couple.jpeg', venue: '/banquet_hall.jpeg', finale: '/abhinav_didi_south_indian.jpeg', share: '/baat_pakki_share.jpg' },
   /** Optional crop focus (CSS object-position) for a photo that its frame would otherwise cut badly. */
   photoFocus: { bride: '50% 8%', hero: '44% 30%' } as Partial<Record<'hero' | 'groom' | 'bride' | 'saveDate' | 'venue' | 'finale', string>>,
@@ -38,7 +38,7 @@ export type WeddingEvent = {
 
 export const events: WeddingEvent[] = [
   { title: 'Mandha Pujan - Lunch', time: '1:00 PM', start: '2026-11-24T13:00:00+05:30', end: '2026-11-24T14:00:00+05:30', description: 'Mandha pujan at 10 am (at residence)\nLunch at Navyug Park 1 pm', photo: '/abhinav_mandha.jpeg' },
-  { title: 'The Haldi-Sangeet Mela', time: '11:00 AM – 3:00 PM', start: '2026-11-25T11:00:00+05:30', end: '2026-11-25T15:00:00+05:30', description: 'Rang, masti, haldi ki pehli khushboo aur phir geet aur naach…', venue: 'Hotel President', mapsUrl: 'https://maps.app.goo.gl/rzYhET64B6vwXTyAA', photo: '/Haldi_sangeet.jpeg' },
+  { title: 'The Haldi-Sangeet Mela', time: '11:00 AM – 3:00 PM', start: '2026-11-25T11:00:00+05:30', end: '2026-11-25T15:00:00+05:30', description: 'Rang, masti, haldi ki pehli khushboo aur phir geet aur naach…', venue: 'Hotel President', mapsUrl: 'https://www.google.com/maps/place/HOTEL+PRESIDENT/@29.9648112,77.5459728,17z/data=!3m1!4b1!4m9!3m8!1s0x390eea916d0321fd:0x3214562ecbbbacea!5m2!4m1!1i2!8m2!3d29.9648112!4d77.5459728!16s%2Fg%2F11b6_7zx68?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D', photo: '/Haldi_sangeet.jpeg' },
   { title: 'Baraat', time: '7:00 PM', start: '2026-11-25T19:00:00+05:30', end: '2026-11-25T21:00:00+05:30', description: 'Dhol bajenge, baraat niklegi aur khushiyan chhaayengi…', photo: '/events/baraat.png', focus: '50% 0%' },
   { title: 'Phere', time: '7:00 AM', start: '2026-11-26T07:00:00+05:30', end: '2026-11-26T09:00:00+05:30', description: 'Saat phere, saat vaade aur zindagi bhar ka saath…', photo: '/phere_event.jpeg', focus: '50% 20%' },
   { title: 'Vidai', time: '11:00 AM', start: '2026-11-26T11:00:00+05:30', end: '2026-11-26T12:00:00+05:30', description: 'Aankhon mein aansu, dil mein duaayein aur ek nayi shuruaat…', photo: '/vidhai_new.jpeg' },
